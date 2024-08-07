@@ -126,9 +126,6 @@ KeyPair.prototype._importPublicHex = function _importPublic(key, enc) {
 
 // ECDH
 KeyPair.prototype.derive = function derive(pub) {
-  if(!pub.validate()) {
-    assert(pub.validate(), 'public point not validated');
-  }
   return pub.mul(this.priv).getX();
 };
 
